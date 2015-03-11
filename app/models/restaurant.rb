@@ -3,7 +3,7 @@ class Restaurant < ActiveRecord::Base
   
 
   validates :description, :address, :phone, presence: true
-  validates :name, presence: true, length: { minimum: 2, maximum: 10 }, uniqueness: { scope: :user_id }
+  validates :name, presence: true, uniqueness: { scope: :user_id }
   validates :user_id, presence: true
   
 
