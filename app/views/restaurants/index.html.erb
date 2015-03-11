@@ -1,6 +1,6 @@
 <h1> Resbook </h1>
 
-<% @restaurant.each do |restaurant| %>
+<% @restaurants.each do |restaurant| %>
 <h2><%= link_to restaurant.name, restaurant %></h2>
 <p> <%= restaurant.description %> </p>
 <p> <%= link_to "Edit", edit_restaurant_path(restaurant) %> | 
@@ -8,4 +8,4 @@
 </p>
 <hr />
 <% end %> 
-<p><%= link_to "Add new restaurant", new_restaurant_path %></p>
+<p><%= link_to "Add a new restaurant", new_restaurant_path %></p>
