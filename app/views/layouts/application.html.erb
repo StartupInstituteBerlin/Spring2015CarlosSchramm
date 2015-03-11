@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="navbar navbar-default navbar-static-top">
+	<div class="navbar navbar-inverse">
 		<div class="navbar-inner">
 			<div class="container">
 				<div class="navbar-header">
@@ -22,8 +22,8 @@
 	  	<% end %>
 
 	  <% unless current_user %>
-	    <%= link_to "Login",    new_user_session_path %>
-	    <%= link_to "Register", new_user_registration_path %>
+	    <%= link_to "Login",    new_user_session_path, class: "btn btn-primary btn-xs" %>
+	    <%= link_to "Register", new_user_registration_path, class: "btn btn-primary btn-xs" %>
 	  <% else %>
 	    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-xs" %>
 	  <% end %>

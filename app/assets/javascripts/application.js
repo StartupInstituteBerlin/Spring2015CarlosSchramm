@@ -14,4 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require bootstrap.min	
+//= require bootstrap.min
+//= require jquery.validate
+	
+$(document).ready(function () {
+  $(".new_restaurant").validate({ 
+    debug: true,
+    rules: {
+      "restaurant[name]": {required: true},
+      "restaurant[description]": {required: true},
+      "restaurant[address]": {required: true},
+	  "restaurant[phone]": {required: true}
+    }
+  })
+});	

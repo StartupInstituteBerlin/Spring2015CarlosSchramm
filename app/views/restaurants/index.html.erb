@@ -3,9 +3,9 @@
 <% @restaurants.each do |restaurant| %>
 <h2><%= link_to restaurant.name, restaurant %></h2>
 <p> <%= restaurant.description %> </p>
-<p> <%= link_to "Edit", edit_restaurant_path(restaurant) %> | 
-<%= link_to "Deleted", restaurant, :confirm => "Are you sure?", :method => :delete %>
+<p> <%= link_to "Edit", edit_restaurant_path(restaurant), class: "btn btn-success btn-xs" %> | 
+<%= link_to "Deleted", restaurant, class: "btn btn-danger btn-xs", :confirm => "Are you sure?", :method => :delete %>
 </p>
 <hr />
 <% end %> 
-<p><%= link_to "Add a new restaurant", new_restaurant_path %></p>
+<p><%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-primary btn-xs" %></p>
