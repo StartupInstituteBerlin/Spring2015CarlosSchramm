@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'jquery-validation-rails', '~> 1.13.1'
 
+gem 'google-search'
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
