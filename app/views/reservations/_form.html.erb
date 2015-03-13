@@ -1,0 +1,28 @@
+<%= form_for @reservation do |f| %>
+  <% if @reservation.errors.any? %>
+    <h2>Errors:</h2>
+    <ul>
+      <% @reservation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<p>
+        <%= f.label :last_name %><br />
+        <%= f.text_field :last_name %><br />
+<br />
+        <%= f.label :email %><br />
+        <%= f.text_field :email %><br />
+<br />
+        <%= f.label :date %><br />
+        <%= f.text_field :date %>
+<br />
+		<%= f.label :number_of_people %><br />
+		<%= f.text_field :number_of_people %><br />
+		<%= f.hidden_field :restaurant_id %><br />
+</p>
+
+<p>
+        <%= f.submit "Add", class: "btn btn-primary btn-xs" %>
+</p>
+<% end %>
