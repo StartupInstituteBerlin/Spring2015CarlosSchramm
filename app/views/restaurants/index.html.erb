@@ -3,9 +3,11 @@
 <% @restaurants.each do |restaurant| %>
 <h2><%= link_to restaurant.name, restaurant %></h2>
 <p> <%= restaurant.description %> </p>
+<% if current_user %>
 <p> <%= link_to "Edit", edit_restaurant_path(restaurant), class: "btn btn-success btn-xs" %> | 
 <%= link_to "Deleted", restaurant, class: "btn btn-danger btn-xs", :confirm => "Are you sure?", :method => :delete %>
 </p>
+<% end %>
 <hr />
 <% end %> 
 <% if current_user %> 
