@@ -2,7 +2,6 @@ class ReservationsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :destroy]
   
   def index
-
     restaurants_ids = current_user.restaurants.pluck(:id)
     @reservations = Reservation.where(restaurant_id: restaurants_ids)
   end
@@ -20,6 +19,13 @@ class ReservationsController < ApplicationController
     else
       render "new", restaurant_id: @reservation.restaurant
     end
+  end
+  
+  def accept
+      @reservation = Reservation.find(params[:id]) 
+      ReservationsMailer.send_reservation_confirmation(@reservation).deliver
+      redirect_to reservations_path, :notice => "Reservation accepted!"
+    
   end
   
   def destroy
