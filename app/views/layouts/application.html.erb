@@ -13,20 +13,21 @@
 				<div class="navbar-header">
 				  <%= link_to "Resbook", restaurants_path, class: "navbar-brand" %>
 				</div>
+				<ul class="nav navbar-nav navbar-right">
+		    	  <% unless current_user %>
+		    	    <%= link_to "Login",    new_user_session_path, class: "btn btn-primary btn-xs navbar-btn" %>
+		    	    <%= link_to "Register", new_user_registration_path, class: "btn btn-info btn-xs navbar-btn" %>
+		    	  <% else %>
+		    	    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-xs navbar-btn" %>
+		    	  <% end %>
+			  </ul>
 			</div>
 		</div>
 	</div>
   <div class="container">
-	  	<% flash.each do |key, value| %>
-	  	<p> <%= value %> </p>
-	  	<% end %>
-
-	  <% unless current_user %>
-	    <%= link_to "Login",    new_user_session_path, class: "btn btn-primary btn-xs" %>
-	    <%= link_to "Register", new_user_registration_path, class: "btn btn-primary btn-xs" %>
-	  <% else %>
-	    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-xs" %>
-	  <% end %>
+  	  	<% flash.each do |key, value| %>
+  	  	<p> <%= value %> </p>
+  	  	<% end %>
 
 	  <%= yield %>  
   </div>
