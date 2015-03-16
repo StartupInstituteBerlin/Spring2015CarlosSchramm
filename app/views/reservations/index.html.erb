@@ -1,0 +1,13 @@
+<h1> Resbook </h1>
+
+<% @reservations.each do |reservation| %>
+	<h2><%= reservation.restaurant.name %></h2>
+	<p> <%= reservation.date %> </p>
+	<p>	<%= reservation.last_name %> </p>
+	<p> <%= link_to "Accept", "#", class: "btn btn-success btn-xs" %> | 
+	<%= link_to "Refuse", reservation_path(reservation), class: "btn btn-danger btn-xs", :method => :delete %>
+	</p>
+
+	<hr />
+<% end %> 
+

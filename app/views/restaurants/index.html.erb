@@ -13,5 +13,6 @@
 <% if current_user %> 
   <p>
     <%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-primary btn-xs"%>
+	<%= link_to "Check my reservations", reservations_path, class: "btn btn-success btn-xs" %>
   </p>
 <% end %>
