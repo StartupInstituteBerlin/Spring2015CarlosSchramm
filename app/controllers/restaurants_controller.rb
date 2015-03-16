@@ -2,7 +2,11 @@ class RestaurantsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @restaurants = Restaurant.all
+    if current_user
+      @restaurants = current_user.restaurants.all
+    else
+      @restaurants = Restaurant.all
+    end
   end
 
   def show

@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.create(reservation_params)
     
-    puts @reservation.inspect # this is how you can debug nicely
+    
     
     if @reservation.valid?
       ReservationsMailer.send_reservation_confirmation(@reservation).deliver
