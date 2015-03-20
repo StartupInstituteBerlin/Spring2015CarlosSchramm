@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
       user_id: current_user.id,
       value: params[:value])
 
-    redirect_to restaurants_path, :text => "Thank you for your rating us!"
+    render text: "Thanks for your rating!"
   end
 
   def index
@@ -20,7 +20,9 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @has_rating = Rating.where(restaurant_id: @restaurant.id, user_id: current_user.id).exists?
+    if current_user
+      @has_rating = Rating.where(restaurant_id: @restaurant.id, user_id: current_user.id).exists?
+    end
   end
 
   def new

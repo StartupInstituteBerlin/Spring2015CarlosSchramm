@@ -16,15 +16,30 @@
 //= require_tree .
 //= require bootstrap.min
 //= require jquery.validate
-	
-$(document).ready(function () {
-  $(".new_restaurant").validate({ 
-    debug: true,
-    rules: {
-      "restaurant[name]": {required: true},
-      "restaurant[description]": {required: true},
-      "restaurant[address]": {required: true},
-	  "restaurant[phone]": {required: true}
-    }
+
+$(document).ready(function(){
+  $('.rate_it_btn').click(function(e){
+    e.preventDefault();
+    url = $(this).attr('href');
+
+    $.ajax({
+      type: "GET",
+      url: url,
+      success: function(data){
+         $("#ratings").html(data);
+      }
+    });
   })
-});	
+})
+
+//$(document).ready(function () {
+//  $(".new_restaurant").validate({
+//    debug: true,
+//    rules: {
+//      "restaurant[name]": {required: true},
+//      "restaurant[description]": {required: true},
+//      "restaurant[address]": {required: true},
+//	  "restaurant[phone]": {required: true}
+//    }
+//  })
+//});
