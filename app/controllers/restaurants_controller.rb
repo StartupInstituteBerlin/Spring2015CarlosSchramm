@@ -1,6 +1,15 @@
 class RestaurantsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
+  def rate_it
+    Rating.create(
+      restaurant_id: params[:restaurant_id],
+      user_id: current_user.id,
+      value: params[:value])
+
+    redirect_to restaurants_path, :text => "Thank you for your rating us!"
+  end
+
   def index
     if current_user
       @restaurants = current_user.restaurants.all
@@ -11,6 +20,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @has_rating = Rating.where(restaurant_id: @restaurant.id, user_id: current_user.id).exists?
   end
 
   def new
