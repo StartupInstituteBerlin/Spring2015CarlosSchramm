@@ -8,6 +8,4 @@ Rails.application.routes.draw do
   root to: "home#landing_page"
   resources :restaurants
   #root :to => "restaurants#index"
-
-
 end
