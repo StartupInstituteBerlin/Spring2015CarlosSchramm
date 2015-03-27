@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index,]
 
   def rate_it
     Rating.create(
@@ -11,7 +11,7 @@ class RestaurantsController < ApplicationController
   end
 
   def index
-    if current_user
+    if current_user && current_user.owner?
       @restaurants = current_user.restaurants.all
     else
       @restaurants = Restaurant.all

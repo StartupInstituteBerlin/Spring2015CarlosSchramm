@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   root to: "home#landing_page"
   resources :restaurants
+  resources :ratings, only: :update
   #root :to => "restaurants#index"
 end

@@ -29,6 +29,12 @@ $(document).ready(function(){
          $("#ratings").html(data);
       }
     });
+    $('.rating_btn').mouseover(function(){
+      $('.rating_btn').slice(0, $('.rating_btn').index(this)+1).css("color", "yellow")
+    });
+    $('.rating_btn').mouseleave(function(){
+      $('.rating_btn').css("color", "gray")
+    });
   })
 })
 

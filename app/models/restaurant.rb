@@ -1,6 +1,7 @@
 class Restaurant < ActiveRecord::Base
   belongs_to :user
-  has_many :reservations
+  has_many   :reservations
+  has_many  :ratings
 
 
   validates :description, :address, :phone, presence: true
