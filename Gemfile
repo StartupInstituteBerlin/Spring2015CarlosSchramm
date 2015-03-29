@@ -24,6 +24,10 @@ gem 'jquery-validation-rails', '~> 1.13.1'
 
 gem 'google-search'
 
+gem 'awesome_print'
+
+gem 'faker'
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
