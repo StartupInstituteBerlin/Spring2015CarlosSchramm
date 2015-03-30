@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
 
-gem 'sqlite3'
+gem 'pg'
 
 gem 'sass-rails', '~> 5.0'
 
@@ -26,6 +26,8 @@ gem 'google-search'
 
 gem 'awesome_print'
 
+gem 'rails_12factor', group: :production
+
 gem 'faker'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -39,4 +41,8 @@ group :development, :test do
   gem 'rspec-rails'
 
   gem 'spring'
+
+  gem 'sqlite3'
 end
+
+ruby "2.2.0"
