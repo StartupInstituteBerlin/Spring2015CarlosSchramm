@@ -16,6 +16,10 @@ gem 'devise'
 
 gem 'jquery-rails'
 
+gem 'carrierwave'
+
+gem 'mini_magick'
+
 gem 'turbolinks'
 
 gem 'jbuilder', '~> 2.0'

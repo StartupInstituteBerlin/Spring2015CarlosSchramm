@@ -2,6 +2,7 @@
 <p><%= @restaurant.description %></p>
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.phone %></p>
+<td><%= image_tag(@restaurant.photo.thumb.url) %></td>
 
 <% if current_user && !@has_rating %>
   <div id='ratings'>
