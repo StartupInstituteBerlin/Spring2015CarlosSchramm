@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
       user_id: current_user.id,
       value: params[:value])
 
-    render text: "Thanks for your rating!"
+      redirect_to restaurants_path, :notice => "Thanks for your rating!"
   end
 
   def index
